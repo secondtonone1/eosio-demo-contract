@@ -1,0 +1,1 @@
+curl --request POST --url http://127.0.0.1:5993/v1/icp/open_channel -d'{"seed_block_num_or_id":"579"}' ;curl --request POST --url http://127.0.0.1:9994/v1/icp/open_channel -d'{"seed_block_num_or_id":"436"}'

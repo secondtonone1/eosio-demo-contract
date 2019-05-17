@@ -1,0 +1,20 @@
+info  2019-05-17T07:34:12.397 thread-0  wallet_plugin.cpp:42          plugin_initialize    ] initializing wallet plugin
+info  2019-05-17T07:34:12.398 thread-0  http_plugin.cpp:452           plugin_initialize    ] configured http to listen on 127.0.0.1:55553
+info  2019-05-17T07:34:12.398 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/keosd/stop
+info  2019-05-17T07:34:12.399 thread-0  http_plugin.cpp:530           plugin_startup       ] start listening for http requests
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/node/get_supported_apis
+info  2019-05-17T07:34:12.403 thread-0  wallet_api_plugin.cpp:73      plugin_startup       ] starting wallet_api_plugin
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/create
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/create_key
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/get_public_keys
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/import_key
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/list_keys
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/list_wallets
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/lock
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/lock_all
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/open
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/remove_key
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/set_timeout
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/sign_digest
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/sign_transaction
+info  2019-05-17T07:34:12.403 thread-0  http_plugin.cpp:622           add_handler          ] add api url: /v1/wallet/unlock
