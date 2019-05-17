@@ -1,0 +1,119 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri May 17 15:18:00 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "buycount",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "count",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "destroyuser",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "getearnings",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "mining_data",
+            "base": "",
+            "fields": [
+                {
+                    "name": "pk",
+                    "type": "uint64"
+                },
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "time_stamp",
+                    "type": "uint64"
+                },
+                {
+                    "name": "count",
+                    "type": "uint64"
+                },
+                {
+                    "name": "earnings",
+                    "type": "float64"
+                },
+                {
+                    "name": "ifbuy",
+                    "type": "uint16"
+                },
+                {
+                    "name": "ifearnings",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "regaccount",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "buycount",
+            "type": "buycount",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "destroyuser",
+            "type": "destroyuser",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "getearnings",
+            "type": "getearnings",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "regaccount",
+            "type": "regaccount",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "miningdatas",
+            "type": "mining_data",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}
