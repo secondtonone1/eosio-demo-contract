@@ -1,0 +1,132 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu May 30 11:48:59 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "clear",
+            "base": "",
+            "fields": [
+                {
+                    "name": "max_num",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "member",
+            "base": "",
+            "fields": [
+                {
+                    "name": "number",
+                    "type": "uint64"
+                },
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "dice",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "officialdraw",
+            "base": "",
+            "fields": [
+                {
+                    "name": "num",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "reward",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "winner",
+            "base": "",
+            "fields": [
+                {
+                    "name": "stage",
+                    "type": "uint64"
+                },
+                {
+                    "name": "account",
+                    "type": "name"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "clear",
+            "type": "clear",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "officialdraw",
+            "type": "officialdraw",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "reward",
+            "type": "reward",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "members",
+            "type": "member",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "winners",
+            "type": "winner",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}

@@ -1,0 +1,96 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu May 30 18:08:37 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "claimreward",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "member",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "starttime",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "stop",
+            "base": "",
+            "fields": [
+                {
+                    "name": "count",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "claimreward",
+            "type": "claimreward",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "stop",
+            "type": "stop",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "members",
+            "type": "member",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}

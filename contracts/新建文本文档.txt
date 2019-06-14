@@ -1,0 +1,462 @@
+	
+curl --request POST   --url http://0.0.0.0:9992/v1/eoc_icp/get_info;curl --request POST   --url http://0.0.0.0:9993/v1/eoc_icp/get_info
+
+curl --request POST   --url h//0.0.0.0:9992/v1/icp/open_channel  -d'{"seed_block_num_or_id":"2100"}';curl --request POST   --url http://0.0.0.0:9993/v1/icp/open_channel  -d'{"seed_block_num_or_id":"1950"}';
+
+--genesis-json  genesis.json
+
+
+华南
+ssh eos@39.108.228.174
+
+华北 1 可用区 C	
+47.105.111.1
+账户：root
+密码：tkt1qaz@WSX
+张丹丹  18075132057
+scp -r eos@39.108.228.174:/tkteos/home/twinkle/eocs1  ~/workspace/testnet
+
+scp -r eos@39.108.228.174:/tkteos/home/twinkle/eocs2  ~/workspace/testnet/eocs2
+
+scp -r eos@47.105.111.1:/tkteos/home/eosco813/wallet  ~/workspace/wallet
+
+
+icp_relay.cpp on_irrevisible
+controller.cpp  set_action_merkle
+	
+	ilog( "existing block log, attempting to replay ${n} blocks", ("n",blog_head->block_num()) );
+	ilog("mapitem.first is {mapitem.first}",("mapitem.first",mapitem.first));
+	
+	
+	
+scp -r eos@47.105.111.1:/tkteos/home/twinkle/twinkle04/global04  /home/secondtonone1/workspace/testnet
+scp -r eos@47.105.111.1:/tkteos/home/twinkle/twinkle06/global  /home/secondtonone1/workspace/testne
+
+ #define ICP_BLOCKSEND_NUM 10
+      int end = peer_head_.head_block_num+ICP_BLOCKSEND_NUM < s->block_num ? peer_head_.head_block_num + ICP_BLOCKSEND_NUM:s->block_num;
+	  
+	
+
+1 dumy发送存在bug，导致对端unpacked包堆积，节点崩溃，通过修改dumy发送条件解决此问题。
+2 经过不断的测试和优化，EOCS主网启动成功 
+3 优化merkle_head_block包和irreversible包发送大小，配置config实现可调节，目前正在测试。
+scp -r eos@47.105.111.1:/tkteos/home/twinklescan/* ./
+scp -r eos@47.105.111.1:/tkteos/home/twinkle/twinkle02/config.ini  /home/secondtonone1/workspace/testsubmodule/nodetest/twinkle02
+scp -r eos@47.105.111.1:/tkteos/home/twinkle/twinkle03/config.ini  /home/secondtonone1/workspace/testsubmodule/nodetest/twinkle03
+
+scp -r /home/secondtonone/workspace/eocs.contracts/mining/*   eos@39.108.228.174:/tkteos/home/twinkle/eocs1/miningcontract
+
+scp -r  eos@39.108.228.174:/tkteos/home/twinkle/eocs1/miningcontract/mining.*  /home/secondtonone/workspace/eocs.contracts/mining/
+scp -r  eos@39.108.228.174:/tkteos/home/twinkle/eocs1/miningcontract/lottery.*  /home/secondtonone/workspace/eocs.contracts/lottery/
+scp -r  eos@39.108.228.174:/tkteos/home/twinkle/eocs1/miningcontract/resonance.*  /home/secondtonone/workspace/eocs.contracts/resonance/
+
+scp -r    /home/secondtonone/workspace/eocs.contracts/resonance/*  eos@47.105.111.1:/tkteos/home/contract-test/
+scp -r    /home/secondtonone/workspace/eocs.contracts/lottery/*  eos@47.105.111.1:/tkteos/home/contract-test/
+scp -r    /home/secondtonone/workspace/eocs.contracts/mining/*  eos@47.105.111.1:/tkteos/home/contract-test/
+
+
+导入钱包
+./cleos.sh wallet import --private-key 5JfDXY31rikoRUEjcf1PFWk5iF8BUDAzUgG3YTP3pfE8AUiYN6X -n hashen
+钱包密码
+hashen
+PW5Jx3AVSGrgcPgswdFov2uXyEUg37NuGzrRszfdD8GuoFBgywPfK
+wall1
+PW5HssRSSpbdj5mT9C9E2DTQPx5PpQxFEfAenm1GuRX1aMmKgDtqa 
+wall2
+PW5K1MMNkq3AhKfMruif2RtAjZdxvJXzHRJmCCpsGT7UXqwB7upHP
+ 
+eocs
+Private key: 5JfDXY31rikoRUEjcf1PFWk5iF8BUDAzUgG3YTP3pfE8AUiYN6X
+Public key: EOS8H93TkrkxWiTReLUURpauvSo8BD6jC91WJL31jHapV6r73bFDY
+
+Private key: 5KN8AidWYTe2JPG9aBnK7YWEPf28RrenfVocYiXURGs5WL4RRYC
+Public key: EOS6CEaKmoHeSfoZqf83tUBUyJWRn1bP7MPAfvaiBUKMMowpHvNMc
+
+Private key: 5JaaJha4FKRSmUhAgYac2j4FFfdWZWmrBXVMvzJpSahUavSgt1k
+Public key: EOS5B4GyMLvKTccucNi6ikafcjX1P2jZioiP3ATkALG4cR8bhQqDE
+
+Private key: 5JwoPeMkURo5q1hexqJig5gYWnZzBvrTG7aVHwsW8WC2Hz6UFAL
+Public key: EOS8XZ8zTq9t7CkcKiktDUzgEr7MTKiacp5VKtsRQ3CXqq3kU7qmc
+
+Private key: 5J4jw8wRcSPRwohfgbyAXKx8EzmkSsYZxN353s1EW4iVG4PfBQm
+Public key: EOS6S1j1yEUyJAgpVPmojVfA179R3Ah27QKjrF9ksfEV2cDSm13pp
+
+eos icp
+Private key: 5JYEvXEWBbpghnCMb8vaZPEsbgBy2M8BAXm33Syk7DQvxdbHbUU
+Public key: EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu
+
+eos relay
+Private key: 5Hw1YcJaaSFUf93eUbmNYMPAi7ZRN8tMzxZBCK3eUZuY3sjeQtM
+Public key: EOS7wEPjoAYQpN7NuJf3GkZv9VGs6mUDVqpVGnew7GGiKkir3ubTu
+
+eocseostoken
+Private key: 5HwdR5L3uAYQmBaCLkR6XHw9Ae7ZFDmLMiHAp1UTaTUv32h4HyL
+Public key: EOS5FQS7ytekhKzcPsBmirAz1Ev8c63MMNDLNMiqJFhUKudfpfkAZ
+
+
+eocs icp
+Private key: 5JqPEEbsp1CHWQ1kqos4PrSM7xWCPJusTxcXQP6qGjBPfHPMQRk
+Public key: EOS6st3qUGAk4peUHaP6cMdw5duoS1f8y4HeevAncK6kUKcZLqMqs
+
+eocs relay
+Private key: 5HzdqY55PT1TyhBz7wbsmwob3aqp7fMWZpWdEwrtaFYRpb2L2ME
+Public key: EOS8GTK95RK1fgQH5E3fdGUUzmkxvZvzn7ytrm8F8HCXU6wwN8Mdx
+
+eocseostoken
+Private key: 5JBfZ6NhSehy5Y6fPDMTdwftwwbdBUAvDXEDxfGNGGW47Zd4Sug
+Public key: EOS698ohbq2tzcw3XAo6w4jN9BQPGdhehhUyN3MNvrPDeW2JFUBuB
+
+多签测试
+wall1
+Private key: 5KfSxdLJkqTTHD4xW3q3YYwv8LC4kKZWvXRrEco2VR2QG87QeN9
+Public key: EOS7iUXLw4Xdx81ieSFxinNRYPhHNgHQQgdqvLSzT8z8AimcjbSVo
+wall2
+Private key: 5JVUqKAEKq1geRieMdpEgFh8tqis36jey4JojGKs9hsPyDHMG9J
+Public key: EOS6XByb1Lb9q7BtFdYGx3ygYjUrW2v7SEPJhADKHGL2FCwFwcCh3
+
+hashen
+Private key: 5JcHfh64TpdWEMUFuLwgaLYKpZg8pYk8RXRh3Z6J1U9LFawAyPA
+Public key: EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV
+
+
+
+
+./cleos.sh system newaccount eosio tester EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "10000.0000 EOCS" --stake-cpu "    10000.0000 EOCS" --buy-ram-kbytes  9999 -p  eosio               
+
+./cleos.sh system newaccount eosio bob EOS6XByb1Lb9q7BtFdYGx3ygYjUrW2v7SEPJhADKHGL2FCwFwcCh3 EOS6XByb1Lb9q7BtFdYGx3ygYjUrW2v7SEPJhADKHGL2FCwFwcCh3  --stake-net "10000.0000 EOCS" --stake-cpu "    10000.0000 EOCS" --buy-ram-kbytes  9999 -p  eosio  
+
+./cleos.sh system newaccount eosio carl EOS7iUXLw4Xdx81ieSFxinNRYPhHNgHQQgdqvLSzT8z8AimcjbSVo EOS7iUXLw4Xdx81ieSFxinNRYPhHNgHQQgdqvLSzT8z8AimcjbSVo  --stake-net "10000.0000 EOCS" --stake-cpu "    10000.0000 EOCS" --buy-ram-kbytes  9999 -p  eosio  
+
+
+cleos set account permission tester owner '{"threshold": 2, "keys":[
+  {"key":"EOS6XByb1Lb9q7BtFdYGx3ygYjUrW2v7SEPJhADKHGL2FCwFwcCh3",
+  "weight":1},
+  {"key": "EOS7iUXLw4Xdx81ieSFxinNRYPhHNgHQQgdqvLSzT8z8AimcjbSVo",
+  "weight":1}
+]}'  -p tester@owner
+
+
+./cleos.sh get account tester
+
+./cleos.sh set account permission tester active EOS83sN8bfKGk3jTBezN41UN7LfXSVFa1w3YQcGApE67J26t3HLcr owner -p tester@owner
+
+
+./cleos.sh set account permission tester trans '{"threshold": 2, "accounts":[
+  {
+    "permission":
+      {"actor":"bob","permission":"active"},
+      "weight":1
+  },
+  {"permission":
+      {"actor":"carl","permission":"active"},
+      "weight":1}
+]}' active -p tester@active
+
+//转账和trans权限绑定
+./cleos.sh set action permission tester eosio.token transfer trans
+
+./cleos.sh  get account tester
+
+./cleos.sh set contract eosio.msig /home/secondtonone/workspace/eocs.contracts/build/contracts/eosio.msig -p eosio.msig@active
+
+./cleos.sh system newaccount eosio user EOS6st3qUGAk4peUHaP6cMdw5duoS1f8y4HeevAncK6kUKcZLqMqs EOS6st3qUGAk4peUHaP6cMdw5duoS1f8y4HeevAncK6kUKcZLqMqs  --stake-net "100000.0000 EOCS" --stake-cpu     "100000.0000 EOCS" --buy-ram-kbytes  99999 -p  eosio
+
+//先测试下直接转账
+./cleos.sh push action eosio.token transfer '[ "tester", "user", "0.5000 EOCS", "some money" ]' -p tester@trans
+
+./cleos.sh multisig propose payuser '[{"actor": "bob", "permission": "active"},{"actor": "carl", "permission": "active"}]' '[{"actor": "tester", "permission": "trans"}]' eosio.token transfer '{"from":"tester", "to":"user", "quantity":"0.0005 EOCS", "memo":"pay user some money"}' -p bob@active
+
+查看提案
+./cleos.sh multisig review bob payuser
+//bob签署提案
+./cleos.sh multisig approve bob payuser '{"actor":"bob", "permission":"active"}' -p bob@active
+//carl
+./cleos.sh multisig approve bob payuser '{"actor":"carl", "permission":"active"}' -p carl@active
+//bob执行多签
+./cleos.sh multisig exec bob payuser -p bob@active
+
+//撤销签署
+./cleos.sh multisig unapprove bob payuser '{"actor":"carl", "permission":"active"}' -p carl@active
+
+//取消提案
+./cleos.sh multisig cancel bob payuser -p bob@active
+
+//删除权限需要先解除绑定关系
+./cleos.sh set action permission tester eosio.token transfer NULL
+//然后删除权限
+./cleos.sh set account permission tester trans NULL active -p tester@active
+
+
+/home/secondtonone1/workspace/testsubmodule/eocs/build
+/home/secondtonone1/workspace/testsubmodule/nodetest/twinkle05
+
+
+
+curl --request POST   --url http://172.31.189.123:9994/v1/icp/get_info;curl --request POST   --url http://172.31.189.123:5993/v1/icp/get_info
+curl --request POST   --url http://127.0.0.1:9994/v1/eoc_icp/get_info;curl --request POST   --url http://127.0.0.1:5993/v1/eoc_icp/get_info
+
+curl --request POST   --url http://127.0.0.1:9994/v1/eoc_icp/get_info;curl --request POST   --url http://127.0.0.1:5993/v1/eoc_icp/get_info
+
+curl --request POST   --url http://127.0.0.1:9994/v1/icp/get_info;curl --request POST   --url http://127.0.0.1:5993/v1/icp/get_info
+
+./cleos.sh create account eosio eosio.token EOS8H93TkrkxWiTReLUURpauvSo8BD6jC91WJL31jHapV6r73bFDY EOS8H93TkrkxWiTReLUURpauvSo8BD6jC91WJL31jHapV6r73bFDY -p eosio 
+./cleos.sh create account eosio eosio.token EOS8H93TkrkxWiTReLUURpauvSo8BD6jC91WJL31jHapV6r73bFDY EOS8H93TkrkxWiTReLUURpauvSo8BD6jC91WJL31jHapV6r73bFDY -p eosio                                                                                                                          
+
+./cleos.sh system newaccount eosio simayi  EOS7wEPjoAYQpN7NuJf3GkZv9VGs6mUDVqpVGnew7GGiKkir3ubTu EOS7wEPjoAYQpN7NuJf3GkZv9VGs6mUDVqpVGnew7GGiKkir3ubTu  --stake-net "100000.0000 EOCS" --stake-cp    u "100000.0000 EOCS" --buy-ram-kbytes  99999 -p  eosio                                    
+
+
+
+git reset --hard b2fa419ddf68c6b5fc902de53cf8e691206cc8f3
+
+
+https://github.com/eoscochain/libcxx.git
+
+/tkteos/home/eocsio.cdt/libraries/eosiolib/random.hpp
+
+sudo apt-get remove vim-common
+sudo apt-get install vim
+
+
+
+
+
+
+执行步骤
+1 停掉 8，9
+2 在04里执行./stopall.sh
+3 在03/04分别执行 ./startall.sh
+4 在8,9里执行./start.sh --genesis-json ./genesis.json
+5 在3里open_channel
+
+
+sudo ./kubelet --fail-swap-on=false --kubeconfig ./kubeconfig  --containerd &{{} map[]}
+
+/home/secondtonone/workspace/eocs/build
+/home/secondtonone/workspace/twinkle01
+
+
+/home/secondtonone/workspace/eocs.contracts/build/
+scp -r eos@47.105.111.1:/tkteos/home/eocs.contracts/build  ./
+
+./cleos.sh system newaccount eosio tkt111111111 EOS78qUYA6bajtbgU8H7hSnHeJAoZ1LATGiUWzFQz5WF6bpYfxu5T EOS78qUYA6bajtbgU8H7hSnHeJAoZ1LATGiUWzFQz5WF6bpYfxu5T  --stake-net "1000.0000 EOCS" --stake-cpu "1000.0000 EOCS" --buy-ram-kbytes  9999 -p  eosio
+
+./cleos.sh transfer eosio tkt111111111 "10000000.0000 EOCS"
+
+ id 
+ 14f57e8a310ff60d01fd5816e00fd3dac98587a08065fbd685575ecd0e901b47
+ signed id
+ dd5c6b0c5a18b5624ec847b5647cb785879a4816f8743de2ba7706dc3270ida5
+ 
+ 
+ my->head = *my->index.get<by_lib_block_num>().begin();
+auto lib    = my->head->dpos_irreversible_blocknum;
+ auto oldest = *my->index.get<by_block_num>().begin();
+
+
+https://studygolang.com/articles/12060 
+https://studygolang.com/articles/12094 
+https://studygolang.com/articles/13127
+
+
+111 下 浏览器删除数据流程
+1 停掉主目录下twinkle/twinkle11/下的节点，并且删除data下的数据
+2 删除mongodb 首先进入/usr/local/mongodb/bin，执行./mongo
+然后
+use EOCS
+db.dropDatabase()
+退出即可。
+
+3 完成后记得重启twinkle111(配合174一同重启处理)
+
+174 重启流程
+1 进入主目录twinkle,分别进入eocs1,eocs2,eos1停掉对应节点(eocs 1,eocs2,eos1是一组)
+2 进入根目录/data/eocs1/data , /data/eocs2/data, 以及主目录下twinkle/eos1/data，删除数据
+3  启动主目录下twinkle/eocs1， twinkle/eocs2， twinkle/eos1的节点
+4 进入/twinkle/eos1/下， 执行步骤bios1.sh, create_account.sh，regproducer.sh， deleg_vote.sh
+
+
+cdt编译，合约编译
+1 cdt编译
+在/data/eosco/eocsio.cdt 下执行build.sh
+编译成功后 执行install.sh
+2 合约编译
+在主目录下 eocs.contracts里(/tkteos/home/eocs.contracts)
+执行 build.sh
+
+./cleos.sh push action eosio setglobal '["to_voter_bonus_rate","0.5"]' -p eosio
+
+cleos multisig propose payuser '[{"actor": "bob", "permission": "active"},{"actor": "carl", "permission": "active"}]' 
+'[{"actor": "tester", "permission": "trans"}]' 
+eosio.token transfer '{"from":"tester", "to":"user", "quantity":"0.0005 SYS", "memo":"pay user some money"}' -p bob@active
+
+
+===================================================================================================
+
+编译挖矿合约
+eosio-cpp ./mining.cpp -o mining.wasm --abigen
+
+创建账号
+
+./cleos.sh system newaccount eosio mining EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu  --stake-net "100000.0000 EOCS" --stake-cpu     "100000.0000 EOCS" --buy-ram-kbytes  99999 -p  eosio
+
+发布合约
+./cleos.sh set contract mining /home/secondtonone/workspace/eocs.contracts/mining  -p mining
+调用合约
+./cleos.sh push action mining regaccount '["poirot"]' -p mining@active
+查询表
+./cleos.sh get table mining mining miningdatas
+
+购买
+./cleos.sh push action mining buycount '["poirot",1024]' -p mining@active
+获取利息
+./cleos.sh push action mining getearnings '["poirot"]' -p mining@active
+删除用户
+./cleos.sh push action mining destroyuser  '["poirot"]' -p mining@active
+===============================================================================================
+
+===================================================================
+测试共振
+创建共振账号
+./cleos.sh system newaccount eosio gongzhen EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+发布合约
+./cleos.sh set contract gongzhen /home/secondtonone/workspace/eocs.contracts/resonance/ -p gongzhen
+给eosio测试号转点钱
+./cleos.sh transfer eosio eoss11111111  "1000000.0000 EOS"  -p eosio
+调用转账测试
+./cleos.sh transfer eoss11111111  gongzhen "200.0000 EOS"  "eoss11111111" -p eoss11111111
+
+./cleos.sh get table gongzhen gongzhen orders
+
+//测试初始化拼团
+./cleos.sh transfer eoss11111111  gongzhen "234.0000 EOS"  "eoss11111111 initiate_group:3" -p eoss11111111
+//查询groups
+./cleos.sh get table gongzhen gongzhen groups 
+
+./cleos.sh system newaccount eosio lucus EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh system newaccount eosio bob EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh system newaccount eosio kate EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+bob 加入拼团
+./cleos.sh transfer bob  gongzhen  "234.0000 EOS"  "bob join_group:0" -p bob
+
+./cleos.sh transfer lucus  gongzhen  "234.0000 EOS"  "lucus join_group:0" -p lucus
+
+./cleos.sh transfer kate  gongzhen  "234.0000 EOS"  "kate join_group:0" -p kate
+查询账户余额
+./cleos.sh get currency balance eosio.token kate
+
+./cleos.sh transfer kate  gongzhen  "234.0000 EOS"  "kate initiate_group:3" -p kate
+
+测试无限拼团
+无限拼团之前groupstas表是空的
+./cleos.sh get table gongzhen gongzhen groupstats
+kat发起无限拼团
+./cleos.sh transfer kate  gongzhen  "234.0000 EOS"  "kate initiate_group:-1" -p kate
+查看group和groupstats
+
+./cleos.sh get table gongzhen gongzhen groupstats
+./cleos.sh get table gongzhen gongzhen groups
+
+bob 加入拼团
+./cleos.sh transfer bob  gongzhen  "115.0000 EOS"  "bob join_group:2" -p bob
+
+清楚记录
+./cleos.sh push action gongzhen clear  '[100]' -p gongzhen
+=======================================================================
+
+总结
+一个账户可以参与多个不同的拼团
+一个账户可以发起不同的拼团
+一个账户不可以重复加入拼团
+当无限拼团是，groupstats会记录无限拼团的组信息。
+3,5,7人拼团信息不会出现在groupstats中。
+转账transfer  memo信息收益人可以写任何人。
+
+==============================================
+挖矿测试，测试爱国合约 
+
+创建账号
+
+./cleos.sh system newaccount eosio mining EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu  --stake-net "100000.0000 EOC" --stake-cpu     "100000.0000 EOC" --buy-ram-kbytes  99999 -p  eosio
+
+//转账给mining 账户
+./cleos.sh transfer eosio mining "1000.0000 EOC" -p eosio
+
+//查询账户余额
+./cleos.sh get currency balance eosio.token mining
+
+//查询用户状况
+./cleos.sh get account mining
+
+创建另一个账号并转账
+./cleos.sh system newaccount eosio bob EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOC" --stake-cpu "    10000.0000 EOC" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh transfer eosio bob "1000.0000 EOC" -p eosio
+
+发布合约
+./cleos.sh set contract mining /home/secondtonone/workspace/eocs.contracts/mining  -p mining
+调用合约
+./cleos.sh transfer eosio mining "1000.0000 EOC" -p eosio
+./cleos.sh transfer bob mining "1000.0000 EOC" -p bob
+
+cleos set account permission mining active '{"threshold": 1,"keys": [{"key":"EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu", "weight":1}],"accounts": [{"permission":{"actor":"mining","permission":"eosio.code"},"weight":1}]}' owner -p mining@owner
+./cleos.sh push action mining claimreward '["bob"]' -p bob
+./cleos.sh  push action mining stop '[]' -p mining
+再次查询
+./cleos.sh  get table mining mining members
+====================================================================================
+
+====================================================================================
+
+测试lottery
+创建账号
+./cleos.sh system newaccount eosio lottery EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu  --stake-net "100000.0000 EOC" --stake-cpu     "100000.0000 EOC" --buy-ram-kbytes  99999 -p  eosio
+
+//转账lottery 账户
+./cleos.sh transfer eosio lottery "1000.0000 EOC" -p eosio
+
+//查询账户余额
+./cleos.sh get currency balance eosio.token lottery
+
+创建另一个账号并转账
+./cleos.sh system newaccount eosio lucus EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOC" --stake-cpu "    10000.0000 EOC" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh transfer eosio lucus "1000.0000 EOC" -p eosio
+
+发布合约
+./cleos.sh set contract lottery /home/secondtonone/workspace/eocs.contracts/lottery  -p lottery
+
+调用合约
+./cleos.sh transfer lottery lucus "1.0000 EOC" -p lottery
+
+查看member 和winner
+./cleos.sh get table lottery lottery members
+
+./cleos.sh get table lottery lottery winners
+
+执行抽奖
+./cleos.sh push action lottery reward '["lucus"]' -p lucus 
+
+查看member 和winner
+./cleos.sh get table lottery lottery members
+
+./cleos.sh get table lottery lottery winners
+
+授权eosio.code
+
+
+./cleos.sh set account permission lottery active '{"threshold": 1,"keys": [{"key":"EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu", "weight":1}],"accounts": [{"permission":{"actor":"lottery","permission":"eosio.code"},"weight":1}]}' owner -p lottery@owner
+
+
+./cleos.sh push action lottery officialdraw '[1]' -p lottery
+====================================================================================
+
+
+mongo 操作
+
+1 cd /usr/local/mongodb-linux/bin 
+2 use EOCS 选择数据库  (show dbs; 展示所有数据库)
+3 db.printCollectionStats() (显示所有表)
+4 db.action_traces.find({"act.data.to":"eocfexchange"}) (查找指向eocfexchange的交易)
+5  db.action_traces.find({$and:[{"act.name":{$ne:"transfer"}}, {$or:[{"act.data.from":"eocfexchange"},{"act.data.to":"eocfexchange"}] }]})
+
+
+
+
