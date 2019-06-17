@@ -1,0 +1,436 @@
+
+=================================================================================================================
+测试共振
+创建共振账号
+./cleos.sh system newaccount eosio resonance EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+
+发布合约
+./cleos.sh set contract resonance /home/secondtonone/workspace/eocs.contracts/resonance/ -p resonance
+
+创建几个测试账号
+./cleos.sh system newaccount eosio eoss11111111 EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh system newaccount eosio lucus EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh system newaccount eosio bob EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh system newaccount eosio kate EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOS" --stake-cpu "    10000.0000 EOS" --buy-ram-kbytes  9999 -p  eosio
+
+给测试号转账
+./cleos.sh transfer eosio eoss11111111  "1000000.0000 EOS"  -p eosio
+./cleos.sh transfer eosio lucus  "1000000.0000 EOS"  -p eosio
+./cleos.sh transfer eosio bob  "1000000.0000 EOS"  -p eosio
+./cleos.sh transfer eosio kate  "1000000.0000 EOS"  -p eosio
+
+调用转账测试
+./cleos.sh transfer eoss11111111  resonance "200.0000 EOS"  "eoss11111111" -p eoss11111111
+
+//查询orders表
+./cleos.sh get table resonance resonance orders
+
+输出如下
+{
+  "rows": [{
+      "id": 0,
+      "integral_id": 0,
+      "time": 1559195861,
+      "buyer": "eoss11111111",
+      "receiver": "eoss11111111",
+      "source": "200.0000 EOS",
+      "target": "64123.5800 EOC",
+      "group_id": -1,
+      "target_from_group": "0.0000 EOC"
+    }
+  ],
+  "more": false
+}
+
+测试转账数目
+./cleos.sh transfer eoss11111111  resonance "0.0500 EOS"  "eoss11111111" -p eoss11111111
+./cleos.sh transfer eoss11111111  resonance "1001.0000 EOS"  "eoss11111111" -p eoss11111111
+测试货币符号
+./cleos.sh transfer eoss11111111  resonance "1000.0000 EOC"  "eoss11111111" -p eoss11111111
+
+几次转账后查看stage
+./cleos.sh get table resonance resonance stages
+输出如下
+{
+  "rows": [{
+      "stage": 1,
+      "source_price": "320.6179 EOC",
+      "target_total": "751849.0000 EOC",
+      "target_released": "751849.0000 EOC",
+      "source_locked": "2345.0000 EOS"
+    },{
+      "stage": 2,
+      "source_price": "319.7343 EOC",
+      "target_total": "749777.0000 EOC",
+      "target_released": "749777.0000 EOC",
+      "source_locked": "2345.0000 EOS"
+    },{
+      "stage": 3,
+      "source_price": "318.8511 EOC",
+      "target_total": "747706.0000 EOC",
+      "target_released": "162614.0610 EOC",
+      "source_locked": "510.0000 EOS"
+    }
+  ],
+  "more": false
+}
+
+//测试初始化拼团
+./cleos.sh transfer eoss11111111  resonance "234.0000 EOS"  "eoss11111111 initiate_group:3" -p eoss11111111
+//查询groups
+./cleos.sh get table resonance resonance groups 
+结果如下
+{
+  "rows": [{
+      "id": 0,
+      "capacity": 3,
+      "joined": 1
+    }
+  ],
+  "more": false
+}
+
+bob 加入拼团
+./cleos.sh transfer bob  resonance  "234.0000 EOS"  "bob join_group:0" -p bob
+lucus加入拼团
+./cleos.sh transfer lucus  resonance  "234.0000 EOS"  "lucus join_group:0" -p lucus
+
+查看group信息
+./cleos.sh get table resonance resonance groups
+结果
+{
+  "rows": [{
+      "id": 0,
+      "capacity": 3,
+      "joined": 3
+    }
+  ],
+  "more": false
+}
+
+
+测试人数溢出情况
+./cleos.sh transfer kate  resonance  "234.0000 EOS"  "kate join_group:0" -p kate 
+提示组满员，查询账户余额
+./cleos.sh get currency balance eosio.token kate
+测试已加入其他组的用户创建新的拼团
+./cleos.sh transfer lucus  resonance  "234.0000 EOS"  "kate initiate_group:3" -p lucus
+
+./cleos.sh get table resonance resonance groups
+结果
+{
+  "rows": [{
+      "id": 0,
+      "capacity": 3,
+      "joined": 3
+    },{
+      "id": 1,
+      "capacity": 3,
+      "joined": 1
+    }
+  ],
+  "more": false
+}
+
+
+测试无限拼团
+无限拼团之前groupstas表是空的
+./cleos.sh get table resonance resonance groupstats
+kate发起无限拼团
+./cleos.sh transfer kate  resonance  "234.0000 EOS"  "kate initiate_group:-1" -p kate
+查看group和groupstats
+./cleos.sh get table resonance resonance groupstats
+结果
+{
+  "rows": [{
+      "id": 2,
+      "source_total": "234.0000 EOS"
+    }
+  ],
+  "more": false
+}
+
+./cleos.sh get table resonance resonance groups
+结果
+{
+  "rows": [{
+      "id": 0,
+      "capacity": 3,
+      "joined": 3
+    },{
+      "id": 1,
+      "capacity": 3,
+      "joined": 1
+    },{
+      "id": 2,
+      "capacity": -1,
+      "joined": 1
+    }
+  ],
+  "more": false
+}
+
+
+bob 加入拼团
+./cleos.sh transfer bob  gongzhen  "115.0000 EOS"  "bob join_group:2" -p bob
+
+清楚记录
+./cleos.sh push action gongzhen clear  '[100]' -p gongzhen
+
+总结
+一个账户可以参与多个不同的拼团
+一个账户可以发起不同的拼团
+一个账户不可以重复加入同一个拼团
+groupstats会记录无限拼团的组信息。
+======================================================================================================================================================================
+
+测试lottery
+================================================================================================================
+创建账号
+./cleos.sh system newaccount eosio lottery EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu  --stake-net "100000.0000 EOC" --stake-cpu     "100000.0000 EOC" --buy-ram-kbytes  99999 -p  eosio
+
+发布合约
+./cleos.sh set contract lottery /home/secondtonone/workspace/eocs.contracts/lottery  -p lottery
+
+//转账给lottery 账户
+./cleos.sh transfer eosio lottery "100000.0000 EOC" -p eosio
+
+//查询账户余额
+./cleos.sh get currency balance eosio.token lottery
+查询此时member表
+./cleos.sh get table lottery lottery members
+此时为空
+{
+  "rows": [],
+  "more": false
+}
+
+创建其他账号并转账
+./cleos.sh system newaccount eosio lucus EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOC" --stake-cpu "    10000.0000 EOC" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh transfer eosio lucus "10000.0000 EOC" -p eosio
+
+./cleos.sh system newaccount eosio kate EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOC" --stake-cpu "    10000.0000 EOC" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh transfer eosio kate "10000.0000 EOC" -p eosio
+
+./cleos.sh system newaccount eosio bob EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV EOS74cP7zVdMUbU3RQxtsYU77ufQwLv66RUL1oFwrjkCzJuanxYpV --stake-net "1000.0000 EOC" --stake-cpu "    10000.0000 EOC" --buy-ram-kbytes  9999 -p  eosio
+./cleos.sh transfer eosio bob "10000.0000 EOC" -p eosio
+
+调用合约
+./cleos.sh transfer lottery lucus "100.0000 EOC" -p lottery
+
+查看member 和winner
+./cleos.sh get table lottery lottery members
+结果
+{
+  "rows": [{
+      "number": 0,
+      "account": "lucus",
+      "dice": -1
+    }
+  ],
+  "more": false
+}
+
+./cleos.sh get table lottery lottery winners
+结果
+{
+  "rows": [],
+  "more": false
+}
+
+测试 lottery多次转账给同一个人
+./cleos.sh transfer lottery lucus "100.0000 EOC" -p lottery
+./cleos.sh get table lottery lottery members
+结果
+{
+  "rows": [{
+      "number": 0,
+      "account": "lucus",
+      "dice": -1
+    }
+  ],
+  "more": false
+}
+
+同样，转账给kate，bob
+./cleos.sh transfer lottery kate  "1000.0000 EOC" -p lottery
+./cleos.sh transfer lottery bob "1000.0000 EOC" -p lottery
+
+授权eosio.code
+
+
+./cleos.sh set account permission lottery active '{"threshold": 1,"keys": [{"key":"EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu", "weight":1}],"accounts": [{"permission":{"actor":"lottery","permission":"eosio.code"},"weight":1}]}' owner -p lottery@owner
+
+执行抽奖
+./cleos.sh push action lottery reward '["lucus"]' -p lottery
+测试lucus重复抽奖报错
+./cleos.sh push action lottery reward '["lucus"]' -p lottery
+
+测试其他账号抽奖
+./cleos.sh push action lottery reward '["kate"]' -p kate
+./cleos.sh push action lottery reward '["bob"]' -p bob
+查看member 和winner
+./cleos.sh get table lottery lottery members
+结果
+{
+  "rows": [{
+      "number": 0,
+      "account": "lucus",
+      "dice": 43
+    },{
+      "number": 1,
+      "account": "kate",
+      "dice": 68
+    },{
+      "number": 2,
+      "account": "bob",
+      "dice": 19
+    }
+  ],
+  "more": false
+}
+
+./cleos.sh get table lottery lottery winners
+结果
+{
+  "rows": [{
+      "stage": 0,
+      "account": "kate"
+    }
+  ],
+  "more": false
+}
+
+官方发奖，测试人数不足情况
+./cleos.sh push action lottery officialdraw '[1000]' -p lottery
+测试正常情况抽取1人
+./cleos.sh push action lottery officialdraw '[1]' -p lottery
+
+查询members
+./cleos.sh get table lottery lottery members
+{
+  "rows": [{
+      "number": 0,
+      "account": "lucus",
+      "dice": 43
+    },{
+      "number": 1,
+      "account": "kate",
+      "dice": 68
+    },{
+      "number": 2,
+      "account": "bob",
+      "dice": 88888
+    }
+  ],
+  "more": false
+}
+此时bob 被选中，dice修改为88888
+
+测试再次抽奖
+./cleos.sh push action lottery officialdraw '[1]' -p lottery
+查看members
+
+./cleos.sh get table lottery lottery members
+{
+  "rows": [{
+      "number": 0,
+      "account": "lucus",
+      "dice": 88888
+    },{
+      "number": 1,
+      "account": "kate",
+      "dice": 68
+    },{
+      "number": 2,
+      "account": "bob",
+      "dice": 88888
+    }
+  ],
+  "more": false
+}
+
+查看winners
+
+./cleos.sh get table lottery lottery winners
+{
+  "rows": [{
+      "stage": 0,
+      "account": "kate"
+    },{
+      "stage": 1,
+      "account": "bob"
+    },{
+      "stage": 2,
+      "account": "lucus"
+    }
+  ],
+  "more": false
+}
+
+测试清除数据
+./cleos.sh push action lottery clear '[6]' -p lottery
+
+================================================================================================================
+
+=================================================================================================================
+测试挖矿
+
+创建账号
+
+./cleos.sh system newaccount eosio mining EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu  --stake-net "100000.0000 EOC" --stake-cpu     "100000.0000 EOC" --buy-ram-kbytes  99999 -p  eosio
+
+发布合约
+./cleos.sh set contract mining /home/secondtonone/workspace/eocs.contracts/mining  -p mining
+
+//转账给mining 账户
+./cleos.sh transfer eosio mining "100000.0000 EOC" -p eosio
+
+//查询账户余额
+./cleos.sh get currency balance eosio.token mining
+
+授权eosio.code
+./cleos.sh set account permission mining active '{"threshold": 1,"keys": [{"key":"EOS5qXmhaP1V14fiEjWfboHRx5KYR4psuAi2bmT3qiE6THVa2i4nu", "weight":1}],"accounts": [{"permission":{"actor":"mining","permission":"eosio.code"},"weight":1}]}' owner -p mining@owner
+
+查询members
+./cleos.sh  get table mining mining members
+目前没有用户加入
+{
+  "rows": [],
+  "more": false
+}
+
+用户参与挖矿
+./cleos.sh transfer bob mining "1000.0000 EOC" -p bob
+查询余额
+./cleos.sh get currency balance eosio.token bob
+30000.0000 EOC
+测试符号和数量
+
+./cleos.sh transfer kate mining "100.0000 EOC" -p kate
+assertion failure with message: Minimun quantity 1000 EOC.
+./cleos.sh transfer kate mining "100.0000 EOS" -p kate
+Symbol EOS is not supported by token contract eosio.token
+测试同一个账户多次挖矿
+./cleos.sh transfer bob mining "2000.0000 EOC" -p bob
+assertion failure with message: Cannot repeat the mining.
+
+测试账户获收益，不满足七天
+./cleos.sh push action mining claimreward '["bob"]' -p bob
+查询bob账号，
+./cleos.sh get currency balance eosio.token bob
+此时EOC数量为 31000.0000 EOC
+
+删除数据
+./cleos.sh  push action mining stop '[10]' -p mining
+
+
+
+
+================================================================================================================
+
+1 ios,android 钱包发布成功，时间截止14:00(最迟)
+2 通知各群主下载钱包，并生成eos,eoc账号，交给小秘书(时间线14:10~15:00)
+3 内部生成一个测试账号，先对该账号执行多签，进行测试闪兑(时间15:10~15:40)
+4 测试无误后，为超级群主多签，生成多钱账号后立刻通知超级群主(15:50~16:30)
+5 各群主闪兑，无误后通知自己群成员加入(16:40~未来)
